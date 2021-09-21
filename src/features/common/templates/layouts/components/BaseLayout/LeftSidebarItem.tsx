@@ -1,7 +1,6 @@
 import React, {FC} from "react";
 import {BiCircle, CgProfile, IoIosArrowForward} from "react-icons/all";
 import LeftSidebarSeparator from "./LeftSidebarSeparator";
-import LeftSidebarDropdownItem from "./LeftSidebarDropdownItem";
 
 const LeftSidebarItem:FC<any> = () =>{
     return(
@@ -14,10 +13,6 @@ const LeftSidebarItem:FC<any> = () =>{
                 </div>
                 {/*<IoIosArrowForward/>*/}
             </div>
-            <LeftSidebarDropdownItem/>
-
-
-
         </>
     );
 }

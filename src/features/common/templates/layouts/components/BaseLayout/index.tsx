@@ -1,8 +1,8 @@
 import {FC} from "react";
-import LeftSidebar from "./components/BaseLayout/LeftSidebar";
-import Navbar from "./components/BaseLayout/Navbar";
+import LeftSidebar from "./LeftSidebar";
+import Navbar from "./Navbar";
 
-const BaseLayout:FC<any> = () => {
+const Index:FC<any> = () => {
     const toggleSidebar = () => {
         const sidebar = document.querySelector("#sidebar");
         sidebar?.classList.toggle("-translate-x-full");
@@ -27,4 +27,4 @@ const BaseLayout:FC<any> = () => {
         </div>
     );
 }
-export default BaseLayout;
+export default Index;

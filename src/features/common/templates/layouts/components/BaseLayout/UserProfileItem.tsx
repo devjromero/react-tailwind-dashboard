@@ -1,6 +1,6 @@
 import {createPopper} from "@popperjs/core";
 import React from "react";
-import Profile from './../../../../../assets/profile.jpeg';
+import Profile from '../../../../../../assets/profile.jpeg';
 
 const UserProfileItem:React.FC<any> = ({ color }) => {
     // dropdown props

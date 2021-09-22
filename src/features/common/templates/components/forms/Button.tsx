@@ -3,7 +3,7 @@ import {FC, PropsWithChildren} from "react";
 const Button:FC<any> = (props: PropsWithChildren<any>) => {
 
     return (
-        <button className={'bg-red-400 py-2 px-2 rounded shadow-md'}>
+        <button className={'w-full bg-blue-400 py-2 px-2 rounded shadow-md text-white'} type={'submit'}>
             {props.children}
         </button>
     );

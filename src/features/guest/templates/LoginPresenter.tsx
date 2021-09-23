@@ -54,8 +54,9 @@ const LoginPresenter:FC<Props> = (props:PropsWithChildren<Props>) =>{
                     >
                         <InputPassword
                             placeholder = {'******'}
-                            onChange    = {e => null}
-                            value       = {'asd'}
+                            onChange    = {props.handleChange}
+                            value       = {props.values.password}
+                            name = {'password'}
                             // thereIsAnError={true}
                         />
                     </InputGroup>

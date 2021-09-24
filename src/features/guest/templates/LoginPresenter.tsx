@@ -5,7 +5,6 @@ import InputText from "../../common/templates/components/forms/InputText";
 import Button from "../../common/templates/components/forms/Button";
 import InputPassword from "../../common/templates/components/forms/InputPassword";
 import LanguageSwitcher from "../../common/templates/components/languageSwitcher/LanguageSwitcher";
-import OnlineEducationSVG from './../../../assets/login/online_education.svg';
 import ComputerBackground from './../../../assets/login/login.png';
 
 
@@ -28,9 +27,9 @@ const LoginPresenter:FC<Props> = (props:PropsWithChildren<Props>) =>{
 
     return (
         <div className= {'h-screen w-screen flex flex-col xl:flex-row'}>
-            <div className={'bg-blue-100 hidden xl:flex w-2/3 xpx-2'}>
+            <div className={'bg-blue-100 hidden xl:flex w-2/3 xpx-2 hola'}>
                 {/*<img src={OnlineEducationSVG} alt="" className={'w-full'}/>*/}
-                <img src={ComputerBackground} alt="" className={'w-full'}/>
+                <img src={ComputerBackground} alt="" className={' xmundo'}/>
             </div>
             <div className={'absolute z-10 w-full flex justify-end'}>
                 <LanguageSwitcher />

@@ -1,9 +1,13 @@
 import {FC, PropsWithChildren} from "react";
-
-const Button:FC<any> = (props: PropsWithChildren<any>) => {
-
+interface Props {
+    className?: string
+}
+const Button:FC<Props> = (props: PropsWithChildren<Props>) => {
+    const { className } = props;
     return (
-        <button className={'w-full bg-blue-400 py-2 px-2 rounded shadow-md text-white'} type={'submit'}>
+        <button className={`w-full  py-2 px-2 bg-blue-400 rounded shadow-md text-white ${className}`}
+                type={'submit'}
+        >
             {props.children}
         </button>
     );

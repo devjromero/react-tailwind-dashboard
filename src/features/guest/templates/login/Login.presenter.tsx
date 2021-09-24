@@ -8,6 +8,7 @@ import {FormInputs} from "./Login";
 import {FormikValues} from "formik";
 import Button from "../../../common/templates/components/forms/Button";
 import InputPassword from "../../../common/templates/components/forms/InputPassword";
+import useTranslation from "../../../common/utilities/hooks/useTranslation";
 
 interface Props {
     values:         FormInputs | FormikValues,
@@ -25,31 +26,31 @@ const LoginPresenter:FC<Props> = (props: PropsWithChildren<Props>) => {
             <LanguageSwitcherComponent/>
             <FormLayout {...props}/>
         </div>
-
     );
 }
 
-
-
 const FormLayout:FC<Props> = (props: PropsWithChildren<Props>) => {
     const { handleChange, values } = props;
+    const { t } = useTranslation();
     return (
         <div className={'relative z-1 h-screen w-full flex flex-col p-4 justify-center gap-3 lg:w-1/3'}>
             <div className={'relative z-1 w-full flex flex-col items-center  gap-3'}>
                 <img src={Logo} alt={'Logo jromero'} className={'rounded-full w-3/12'}/>
-                <h1 className={'text-md'}>Inicio de sesión</h1>
+                <h1 className={'text-md'}>{t('login')}</h1>
             </div>
             <form action="" className={'w-full flex flex-col gap-3'}>
-                <InputGroup label={'Email'} feedback={'example@gmail.com'} >
-                    <InputText onChange={handleChange} value={values.email} name={'email'} placeholder={'example@gmail.com'}/>
+                <InputGroup label={t('email')} feedback={'ideal@ideal.com'} >
+                    <InputText onChange={handleChange} value={values.email} name={'email'} placeholder={'ideal@ideal.com'}/>
                 </InputGroup>
-                <InputGroup label={'Password'} callActionLabel={'¿Olvidaste tu contraseña?'}>
+
+                <InputGroup label={t('password')} callActionLabel={t('forgotPassword?')}>
                     <InputPassword onChange={handleChange} value={values.password} name={'password'} placeholder={'******'}/>
                 </InputGroup>
-                <Button className={'mt-4 bg-red-400'}>Iniciar sesión</Button>
+
+                <Button className={'mt-4 bg-red-400'}>{t('loginCallACtion')}</Button>
             </form>
             <p className={'text-gray-600'}>
-                ¿Nuevo en la plataforma? crea una cuenta <span className={'italic text-blue-400'}>aquí</span>
+                {t('callActionRegister')} <span className={'italic text-blue-400'}>{t('here')}</span>
             </p>
         </div>
     );

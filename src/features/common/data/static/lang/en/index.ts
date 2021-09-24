@@ -1,6 +1,12 @@
+import commonTranslations from './common';
+import loginTranslations from "./login";
+import labelsTranslations from "./labels";
+
 const EN ={
     translation:{
-        "welcome": "Welcome to React and react-i18next"
+        ...commonTranslations,
+        ...loginTranslations,
+        ...labelsTranslations,
     }
 }
 

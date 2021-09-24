@@ -1,6 +1,12 @@
+import commonTranslations from './common';
+import loginTranslations from "./login";
+import labelsTranslations from "./labels";
+
 const ES ={
     translation:{
-        "welcome": "bienvenido :3"
+        ...commonTranslations,
+        ...loginTranslations,
+        ...labelsTranslations
     }
 }
 

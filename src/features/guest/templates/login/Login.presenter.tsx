@@ -21,7 +21,10 @@ interface Props {
 const LoginPresenter:FC<Props> = (props: PropsWithChildren<Props>) => {
     console.log( props.values);
     return (
-        <div className={'h-screen w-screen flex flex-col xl:flex-row'}>
+        <div className={'h-screen w-screen flex flex-col ' +
+        'lg:flex-row'
+        }
+        >
             <ImageBackground />
             <LanguageSwitcherComponent/>
             <FormLayout {...props}/>
@@ -33,12 +36,14 @@ const FormLayout:FC<Props> = (props: PropsWithChildren<Props>) => {
     const { handleChange, values } = props;
     const { t } = useTranslation();
     return (
-        <div className={'relative z-1 h-screen w-full flex flex-col p-4 justify-center gap-3 lg:w-1/3'}>
-            <div className={'relative z-1 w-full flex flex-col items-center  gap-3'}>
-                <img src={Logo} alt={'Logo jromero'} className={'rounded-full w-3/12'}/>
+        <div className={'relative z-1 h-screen w-full flex flex-col p-4 justify-center gap-3 ' +
+        'lg:w-1/3'
+        }>
+            <div className={'relative z-1 w-full flex flex-col items-center  gap-3 xl:gap-4'}>
+                <img src={Logo} alt={'Logo jromero'} className={'rounded-full w-3/12 lg:mb-4'}/>
                 <h1 className={'text-md'}>{t('login')}</h1>
             </div>
-            <form action="" className={'w-full flex flex-col gap-3'}>
+            <form action="" className={'w-full flex flex-col gap-4'}>
                 <InputGroup label={t('email')} feedback={'ideal@ideal.com'} >
                     <InputText onChange={handleChange} value={values.email} name={'email'} placeholder={'ideal@ideal.com'}/>
                 </InputGroup>
@@ -49,7 +54,7 @@ const FormLayout:FC<Props> = (props: PropsWithChildren<Props>) => {
 
                 <Button className={'mt-4 bg-red-400'}>{t('loginCallACtion')}</Button>
             </form>
-            <p className={'text-gray-600'}>
+            <p className={'text-gray-600 mt-4'}>
                 {t('callActionRegister')} <span className={'italic text-blue-400'}>{t('here')}</span>
             </p>
         </div>
@@ -58,7 +63,7 @@ const FormLayout:FC<Props> = (props: PropsWithChildren<Props>) => {
 
 const LanguageSwitcherComponent:FC<any> = () => {
     return (
-        <div className={'absolute z-10 w-full flex justify-end'}>
+        <div className={'absolute z-10 w-full flex justify-end bg-opacity-0'}>
             <LanguageSwitcher />
         </div>
     );

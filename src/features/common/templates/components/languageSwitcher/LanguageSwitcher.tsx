@@ -2,23 +2,34 @@ import {FC, Fragment, useState} from "react";
 import {Listbox} from "@headlessui/react";
 import usaFlag from './../../../../../assets/flags/usa.svg';
 import mexFlag from './../../../../../assets/flags/mexico.svg';
-const people = [
+import useTranslation from "../../../utilities/hooks/useTranslation";
+interface Language {
+    id: string,
+    name: string,
+    Component: any
+}
+const languages:Language[] = [
     { id: 'en', name: 'English', Component: usaFlag },
     { id: 'es', name: 'Español', Component: mexFlag  },
 ];
 
 const LanguageSwitcher:FC<any> = () => {
-    const [selectedPerson, setSelectedPerson] = useState(people[0])
+    const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
+    const { translatorConfig } = useTranslation();
+    const handleChange = (selectedLang:Language) => {
+        setSelectedLanguage(selectedLang);
+        translatorConfig.changeLanguage(selectedLang.id);
+    }
     return (
         <div className={'w-3/12 sm:w-2/12 flex justify-end mr-4 mt-4'}>
-            <Listbox value={selectedPerson} onChange={setSelectedPerson} as={'div'} className={'w-auto text-xs justify-center  gap-2'}>
+            <Listbox value={selectedLanguage} onChange={handleChange} as={'div'} className={'w-auto text-xs justify-center  gap-2'}>
                 <Listbox.Button as={'div'} className={'w-full flex justify-around items-center px-1 py-1'}>
-                    <img src={selectedPerson.Component} alt="flag" className={'w-3 sm:w-6'}/>
+                    <img src={selectedLanguage.Component} alt="flag" className={'w-3 sm:w-6'}/>
                     &nbsp;
-                    <p className={'text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl'}>{selectedPerson.name}</p>
+                    <p className={'text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl'}>{selectedLanguage.name}</p>
                 </Listbox.Button>
                 <Listbox.Options className={'w-full flex flex-col items-end justify-around px-1 py-1'} as={'div'}>
-                    {people.map((person) => (
+                    {languages.map((person) => (
 
                         <Listbox.Option key={person.id} value={person} as={Fragment}>
                             {({ active, selected }) => (

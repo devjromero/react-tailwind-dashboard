@@ -21,7 +21,7 @@ const DefaultLayout:FC<any> = () => {
 const NavBar:FC<any> = ({isOpen,setIsOpen}) => {
     return (
         <div className={'p-2 h-16'}>
-            <div className={'bg-white h-auto rounded flex justify-between h-full'}>
+            <div className={'bg-white h-auto rounded flex justify-between h-full shadow-xl'}>
                 <div className={'flex items-center mx-4 gap-2'}>
                     <h1 className={'text-lg hidden md:block'}><b>J</b><span className={''}>romero</span></h1>
                     <GiHamburgerMenu
@@ -51,8 +51,8 @@ const NavBar:FC<any> = ({isOpen,setIsOpen}) => {
 const LeftSidebar:FC<any> = ({isOpen,setIsOpen}) => {
 
     return (
-        <div className={'absolute border border-black ' +
-        'w-full md:w-64 h-screen p-4 bg-yellow-400 z-10' +
+        <div className={'absolute ' +
+        'w-full md:w-64 h-screen p-4 bg-white z-10 shadow-xl' +
         classNames({
             hidden: !isOpen,
             invisible: !isOpen,

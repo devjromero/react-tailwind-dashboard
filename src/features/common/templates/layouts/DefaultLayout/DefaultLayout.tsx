@@ -3,6 +3,8 @@ import classNames from "classnames";
 import UserAccount from './../../../../../assets/profile.jpeg';
 import {AiOutlineDoubleRight, AiOutlineShoppingCart, GiHamburgerMenu, IoCloseSharp} from "react-icons/all";
 import LanguageSwitcherV2 from "../../components/languageSwitcher/LanguageSwitcherV2";
+import UserProfileItem from "../../components/DefaultLayout/UserProfileItem";
+import Profile from "../../../../user/templates/Profile/Profile";
 
 
 const DefaultLayout:FC<any> = () => {
@@ -12,7 +14,14 @@ const DefaultLayout:FC<any> = () => {
             <LeftSidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
             <div className={'relative w-full'}>
                 <NavBar isOpen={isOpen} setIsOpen={setIsOpen}/>
-                <h1 onClick={(e)=>setIsOpen(!isOpen)}>show</h1>
+                <div className={'p-2'}>
+                    {/*<header className={''}>*/}
+                    {/*    Somthing goes here!!!*/}
+                    {/*</header>*/}
+                    <div className={'w-full h-screen'}>
+                        <Profile />
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -30,7 +39,8 @@ const NavBar:FC<any> = ({isOpen,setIsOpen}) => {
                 </div>
                 <div className={'flex flex-1 flex-row-reverse justify-start gap-x-4 items-center p-1'}>
                     <div className={' h-full w-auto px-1  w-auto'}>
-                        <img src={UserAccount} alt="Profule" className={'rounded-full h-full w-auto'}/>
+                        {/*<img src={UserAccount} alt="Profule" className={'rounded-full h-full w-auto'}/>*/}
+                        <UserProfileItem/>
                     </div>
                     <div className={'flex h-full w-auto px-1  w-auto items-center justify-center'}>
                         <span className="relative block animate-bounce z-0">

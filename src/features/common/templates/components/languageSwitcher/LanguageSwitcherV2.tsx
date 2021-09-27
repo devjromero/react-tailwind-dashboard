@@ -1,13 +1,13 @@
 import {FC, useState} from "react";
 import useTranslation from "../../../utilities/hooks/useTranslation";
-import usaFlag from './../../../../../assets/flags/usa.svg';
-import mexFlag from './../../../../../assets/flags/mexico.svg';
+import mexFlag from './../../../../../assets/flags/mex2.jpg';
 import LanguageType from "../../../types/Language.type";
 import LanguageSwitcherPresenter from "./LanguageSwitcher.presenter";
+import usaS from '../../../../../assets/flags/usa3.jpg';
 
 
 const languages:LanguageType[] = [
-    { id: 'en', name: 'English', Component: usaFlag},
+    { id: 'en', name: 'English', Component: usaS},
     { id: 'es', name: 'Español', Component: mexFlag},
 ]
 

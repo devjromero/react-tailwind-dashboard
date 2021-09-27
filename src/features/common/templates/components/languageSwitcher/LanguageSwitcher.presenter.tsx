@@ -11,16 +11,24 @@ interface Props {
 const LanguageSwitcherPresenter:FC<Props> = (props:PropsWithChildren<Props>) => {
     const { languages, selectedLanguage, handleChange } = props;
     return (
-        <Popover className="relative">
-            <Popover.Button>{selectedLanguage.name}</Popover.Button>
+        <Popover className="relative ">
+            <Popover.Button className={'flex items-center mb-2 justify-between'}>
+                <img src={selectedLanguage.Component} alt="image" className={'w-5'}/>
+                &nbsp;
+                <p className={'hidden md:block text-sm'}>{selectedLanguage.name}</p>
+            </Popover.Button>
             <Popover.Panel className="absolute z-10">
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                     {
                         languages.map((lang: LanguageType)=>(
-                            <span onClick={(e)=>handleChange(lang)}>
-                                <img src={lang.Component} alt=""/>
+                            <div
+                                className={'flex items-center mb-2'}
+                                onClick={(e)=>handleChange(lang)}
+                                key={`lagn-${lang.id}`}
+                            >
+                                <img src={lang.Component} alt="" className={'w-7'}/>
                                 {lang.name}
-                            </span>
+                            </div>
                         ))
                     }
                 </div>

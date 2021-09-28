@@ -19,7 +19,7 @@ const UserProfileItem:React.FC<any> = ({ color }) => {
 
     return (
         <>
-            <div className="flex flex-wrap rounded-full shadow-xl">
+            <div className="flex flex-wrap rounded-full shadow-xl cursor-pointer">
                 <div className="w-9">
                     <div className="align-center ">
                         <img

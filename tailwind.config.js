@@ -8,7 +8,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+        width:['responsive','hover'],
+        display:['group-hover']
+    },
   },
   plugins: [
       require('@tailwindcss/forms')

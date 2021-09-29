@@ -11,26 +11,28 @@ interface Props {
 const LanguageSwitcherPresenter:FC<Props> = (props:PropsWithChildren<Props>) => {
     const { languages, selectedLanguage, handleChange } = props;
     return (
-        <Popover className="relative ">
+        <Popover className="relative w-auto">
             <Popover.Button className={'flex items-center justify-between'}>
                 <img src={selectedLanguage.Component} alt="image" className={'w-5'}/>
                 &nbsp;
                 <p className={'hidden md:block text-sm'}>{selectedLanguage.name}</p>
             </Popover.Button>
-            <Popover.Panel className="absolute z-10">
-                <div className="flex flex-col ">
-                    {
-                        languages.map((lang: LanguageType)=>(
-                            <div
-                                className={'flex items-center mb-2'}
-                                onClick={(e)=>handleChange(lang)}
-                                key={`lagn-${lang.id}`}
-                            >
-                                <img src={lang.Component} alt="" className={'w-7'}/>
-                                {lang.name}
-                            </div>
-                        ))
-                    }
+            <Popover.Panel className="absolute z-10 bg-white w-auto rounded">
+                <div className="flex flex-col w-full cursor-pointer">
+                    <div className={'w-24 p-2 flex flex-col items-center justify-between'}>
+                        {
+                            languages.map((lang: LanguageType)=>(
+                                <div
+                                    className={'w-full flex justify-between items-center mb-2 rounded-full'}
+                                    onClick={(e)=>handleChange(lang)}
+                                    key={`lang-${lang.id}`}
+                                >
+                                    <img src={lang.Component} alt="" className={'w-5'}/>
+                                    <p className={'text-sm'}>{lang.name}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
 
             </Popover.Panel>

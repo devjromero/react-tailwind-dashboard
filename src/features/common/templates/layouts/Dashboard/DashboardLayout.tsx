@@ -2,7 +2,7 @@ import {FC, useState} from "react";
 import classNames from "classnames";
 import Logo from "../../../../../assets/logo.jpg";
 import {AiFillPushpin, AiOutlinePushpin, AiOutlineShoppingCart, CgClose, GiHamburgerMenu} from "react-icons/all";
-import UserProfileItem from "../../components/DefaultLayout/UserProfileItem";
+import UserProfileItem from "../../components/Dashboard/UserProfileItem";
 import LanguageSwitcherV2 from "../../components/languageSwitcher/LanguageSwitcherV2";
 
 const DashboardLayout:FC<any> = () => {

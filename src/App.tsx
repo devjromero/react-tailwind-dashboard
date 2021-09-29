@@ -3,16 +3,31 @@ import React, {useState, Suspense} from 'react';
 import i18n from './features/common/utilities/translator/i18n';
 import {Login} from "./features/guest/templates/login/Login";
 import DashboardLayout from "./features/common/templates/layouts/dashboard/DashboardLayout";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 function App() {
     const [isAuthenticate, setAuthenticate] = useState(true);
     console.log(i18n.language);
     return (
-        <Suspense fallback={<h1>Cargando...</h1>}>
-            <div className={'h-screen w-screen font-montserrat'}>
-                { isAuthenticate && (<DashboardLayout />)}
-                { !isAuthenticate && (<Login/>)}
-            </div>
-        </Suspense>
+
+        <BrowserRouter>
+            {/*{ isAuthenticate && (<DashboardLayout />)}*/}
+            {/*{ !isAuthenticate && (<Login/>)}*/}
+            <Suspense fallback={<h1>Cargando...</h1>}>
+                <div className={'h-screen w-screen font-montserrat bg-white'}>
+                    <Switch>
+                        <Route exact path={'/login'}>
+                            <Login/>
+                        </Route>
+                        <Route exact path={'/dashboard'}>
+                            <DashboardLayout/>
+                        </Route>
+                    </Switch>
+                </div>
+            </Suspense>
+
+
+        </BrowserRouter>
+
 
   );
 }

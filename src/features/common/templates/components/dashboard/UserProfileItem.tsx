@@ -7,13 +7,15 @@ const UserProfileItem:React.FC<any> = ({ color }) => {
     const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
     const btnDropdownRef:any = React.createRef();
     const popoverDropdownRef:any = React.createRef();
-    const openDropdownPopover = () => {
+
+    const openDropdownPopover: VoidFunction = () => {
         createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
             placement: "bottom-start"
         });
         setDropdownPopoverShow(true);
     };
-    const closeDropdownPopover = () => {
+
+    const closeDropdownPopover: VoidFunction = () => {
         setDropdownPopoverShow(false);
     };
 
@@ -33,7 +35,6 @@ const UserProfileItem:React.FC<any> = ({ color }) => {
                             }}
                             alt={'Profile image'}
                         />
-
 
                         <div
                             ref={popoverDropdownRef}

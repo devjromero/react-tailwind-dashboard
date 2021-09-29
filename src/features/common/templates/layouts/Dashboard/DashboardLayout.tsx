@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Logo from "../../../../../assets/logo.jpg";
 import {AiFillPushpin, AiOutlinePushpin, AiOutlineShoppingCart, CgClose, GiHamburgerMenu} from "react-icons/all";
 import UserProfileItem from "../../components/DefaultLayout/UserProfileItem";
+import LanguageSwitcherV2 from "../../components/languageSwitcher/LanguageSwitcherV2";
 
 const DashboardLayout:FC<any> = () => {
 
@@ -30,8 +31,11 @@ const TopNavbar:FC<any> = ({setIsOpen,isOpen}) => {
                             color={'white'}
                         />
                     </div>
-                    <div className={'h-full w-auto pl-4'}>
+                    <div className={'h-full w-auto pl-4 flex items-center'}>
                         <AiOutlineShoppingCart size={20} className={'cursor-pointer'}/>
+                    </div>
+                    <div className={'h-full w-auto pl-4 flex items-center'}>
+                        <LanguageSwitcherV2 />
                     </div>
                 </div>
                 <div className={'lg:hidden'}>

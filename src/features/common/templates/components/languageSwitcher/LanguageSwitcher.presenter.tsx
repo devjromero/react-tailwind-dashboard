@@ -12,7 +12,7 @@ const LanguageSwitcherPresenter:FC<Props> = (props:PropsWithChildren<Props>) => 
     const { languages, selectedLanguage, handleChange } = props;
     return (
         <Popover className="relative ">
-            <Popover.Button className={'flex items-center mb-2 justify-between'}>
+            <Popover.Button className={'flex items-center justify-between'}>
                 <img src={selectedLanguage.Component} alt="image" className={'w-5'}/>
                 &nbsp;
                 <p className={'hidden md:block text-sm'}>{selectedLanguage.name}</p>

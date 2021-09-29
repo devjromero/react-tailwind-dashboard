@@ -71,8 +71,14 @@ const LeftNavbarHeaderItem:FC<any> = ({setIsOpen, isOpen}) => {
                     className = {classNames({
                         'mr-4': isOpen
                     }) +
-                    'rounded-full h-auto w-8 overflow-hidden '}
+                    ' rounded-full h-auto w-8 overflow-hidden '}
                 />
+                <span className={classNames({
+                    'hidden': !isOpen,
+                },' group-hover:block')}>
+                    &nbsp;
+                    &nbsp;
+                </span>
                 <p className={classNames({
                     'lg:hidden group-hover:block': !isOpen
                 })+' '}>Jromero</p>
@@ -84,8 +90,8 @@ const LeftNavbarHeaderItem:FC<any> = ({setIsOpen, isOpen}) => {
                     className   = {'cursor-pointer'}
                 />
             </div>
-            <div className={classNames('h-full',{
-                'flex  items-center': isOpen,
+            <div className={classNames('h-full hidden',{
+                'lg:flex  items-center': isOpen,
                 'hidden group-hover:flex  group-hover:items-center': !isOpen,
             })+
             ' '

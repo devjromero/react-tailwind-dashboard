@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Logo from "../../../../../assets/logo.jpg";
 import {AiFillPushpin, AiOutlinePushpin, CgClose} from "react-icons/all";
 import DashboardChildProps from "../../../types/DashboardChildProps.type";
+import DashboardMenu from "./DashboardMenu";
 
 const LeftSidebarPresenter:FC<DashboardChildProps> = (props: PropsWithChildren<DashboardChildProps>) => {
     const { isOpenLeftNavbar, setIsOpenLeftNavbar } = props;
@@ -13,8 +14,9 @@ const LeftSidebarPresenter:FC<DashboardChildProps> = (props: PropsWithChildren<D
                 'absolute h-screen z-10 lg:relative lg:flex lg:w-4/12 xl:w-2/12' : isOpenLeftNavbar,
             }, ' lg:flex w-full p-4 bg-white ')
         }>
-            <div className={'flex flex-col w-full group'}>
+            <div className={'flex flex-col w-full group first:mb-8'}>
                 <LeftNavbarHeaderItem setIsOpenLeftNavbar={setIsOpenLeftNavbar} isOpenLeftNavbar={isOpenLeftNavbar}/>
+                <DashboardMenu isOpenLeftNavbar={isOpenLeftNavbar}/>
             </div>
         </div>
     );

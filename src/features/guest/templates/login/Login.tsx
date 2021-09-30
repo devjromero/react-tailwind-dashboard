@@ -36,7 +36,4 @@ const FormikRender = (formikProps: FormikProperties) => (
         {...formikProps }
     />
 );
-export {
-    Login,
-
-};
+export default Login;

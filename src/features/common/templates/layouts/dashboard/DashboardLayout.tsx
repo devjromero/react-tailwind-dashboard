@@ -1,9 +1,17 @@
 import {FC, PropsWithChildren, useState} from "react";
 import TopNavbar from "../../components/dashboard/TopNavbar";
 import LeftSidebar from "../../components/dashboard/LeftSidebar";
+import {useDispatch} from "react-redux";
 
+const action = {
+    type: 'authenticateUser',
+    // payload: {
+    //     id:1,
+    //     name: 'andy'
+    // }
+}
 const DashboardLayout:FC<any> = (props: PropsWithChildren<any>) => {
-
+    const dispatch = useDispatch();
     const [isOpenLeftNavbar, setIsOpenLeftNavbar] = useState(false);
 
     return (
@@ -25,6 +33,10 @@ const DashboardLayout:FC<any> = (props: PropsWithChildren<any>) => {
                 {/* END TOP NAVBAR*/}
                 <div className={'h-screen w-full'}>
                     {props.children}
+                    <button
+                        className={'bg-red-400'}
+                        onClick={(e:any)=>dispatch(action)}
+                    >Dispatch</button>
                 </div>
             </div>
             {/*END container*/}
